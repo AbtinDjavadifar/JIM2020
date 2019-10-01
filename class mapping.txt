@@ -1,0 +1,7 @@
+{
+  "classes_mapping": {
+    "Gripper": 200,
+    "Wrinkle": 100,
+    "Fabric": 50
+  }
+}
