@@ -77,4 +77,4 @@ for overlapping_threshold in np.arange(0, 1.05, 0.05):
     print("Overlapping threshold: {} , Average Precision: {} , Average Recall: {} , Average F1: {}".format(overlapping_threshold,Precision_Avg,Recall_Avg,F1_Avg))
     scores = scores.append({'Overlapping threshold': overlapping_threshold, 'Average precision': Precision_Avg,'Average recall': Recall_Avg, 'Average F1': F1_Avg}, ignore_index=True)
 
-scores.to_csv('scores')
+scores.to_csv('scores.csv')
