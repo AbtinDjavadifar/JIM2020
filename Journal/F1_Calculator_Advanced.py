@@ -7,7 +7,7 @@ import pandas as pd
 size_threshold = 0.2
 # overlapping_threshold = 0.7
 
-scores = pd.DataFrame(columns=['Overlapping threshold','Average precision','Average recall, Average F1'])
+scores = pd.DataFrame(columns=['Overlapping threshold','Average precision','Average recall', 'Average F1'])
 
 DCNN_CC_path = Path(r"C:\Users\djava\Desktop\F1\DL CC")
 GT_CC_path = Path(r"C:\Users\djava\Desktop\F1\GT CC")
