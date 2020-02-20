@@ -7,6 +7,8 @@ DCNN_CC_path = Path(r"C:\Users\djava\Desktop\F1\DL CC")
 GT_CC_path = Path(r"C:\Users\djava\Desktop\F1\GT CC")
 annotations = [f for f in os.listdir(GT_CC_path) if f.endswith(".png")]
 
+overlap_threshhold = 0.7
+
 Precision_Avg = 0
 Recall_Avg = 0
 F1_Avg = 0
@@ -26,7 +28,7 @@ for name in annotations:
         for val in wrinkles:
             target_area = DCNN[np.where(GT == val)]
             wrinkle_coverage = np.count_nonzero(target_area) / len(target_area)
-            if wrinkle_coverage > 0.7:
+            if wrinkle_coverage > overlap_threshhold:
                 GT_values.append(val)
                 DCNN_values.extend(np.unique(target_area))
         TP = len(GT_values)
