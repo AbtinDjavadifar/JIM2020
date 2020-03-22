@@ -4,11 +4,11 @@ import random
 from pathlib import Path
 
 
-images_path = Path(r'C:\Users\djava\Desktop\dat\Train\img')
-annotations_path = Path(r'C:\Users\djava\Desktop\dat\Train\ann')
+images_path = Path("Path\to\images")
+annotations_path = Path("Path\to\annotations")
 
-images_test = Path(r'C:\Users\djava\Desktop\dat\Test\img')
-annotations_test = Path(r'C:\Users\djava\Desktop\dat\Test\ann')
+images_test = Path("Path\to\test\images")
+annotations_test = Path("Path\to\test\annotations")
 
 files = [file for file in os.listdir(images_path) if file.endswith(".png")]
 

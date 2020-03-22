@@ -1,16 +1,15 @@
-
 import numpy as np
 import os
 from PIL import Image
-# import tqdm
 from multiprocessing import Pool
 from pathlib import Path
+# import tqdm
 
-Unet_path = Path(r'C:\Users\djava\Desktop\UN AC test\ds\masks_machine')
-Deeplab_path = Path(r'C:\Users\djava\Desktop\DL AC test\ds\masks_machine')
-ICnet_path = Path(r'C:\Users\djava\Desktop\IC AC test\ds\masks_machine')
+Unet_path = Path("Path\to\Unet")
+Deeplab_path = Path("Path\to\Deeplab")
+ICnet_path = Path("Path\to\ICnet")
 
-outputdir = Path(r'C:\Users\djava\Desktop\Stacked\Test\img')
+outputdir = Path("Path\to\outputs")
 
 ids = [file for file in os.listdir(Unet_path) if file.endswith(".png")]
 

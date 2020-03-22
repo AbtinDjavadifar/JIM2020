@@ -4,11 +4,10 @@ import imageio
 from multiprocessing import Pool
 from pathlib import Path
 
-masks1_path = Path("E:/Master-UBC/CVPR2020/Data/Real/Total/Masks1/")
-masks2_path = Path("E:/Master-UBC/CVPR2020/Data/Real/Total/Masks2/")
-labels_path = Path("E:/Master-UBC/CVPR2020/Data/Real/Total/Labels/")
+masks1_path = Path("Path/to/Masks1/")
+masks2_path = Path("Path/to/Masks2/")
+labels_path = Path("Path/to/Labels/")
 annotations = [f for f in os.listdir(masks1_path) if f.endswith(".png")]
-brkn = open("broken.txt","w")
 k = 30
 
 def finding(name):
@@ -31,7 +30,8 @@ def finding(name):
         print("{} converted to masks".format(name))
 
     except IndexError:
-        brkn.write(name + "\n")
+        with open("broken.txt", "w") as outfile:
+            outfile.write(name + "\n")
         pass
 
 if __name__ == '__main__':

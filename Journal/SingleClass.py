@@ -4,9 +4,8 @@ from multiprocessing import Pool
 import numpy as np
 import os
 
-
-src_path = Path(r'E:\Master-UBC\CVPR2020\Data For Upload to Supervisely\Wrinkle classes\Test\ann')
-dest_path = Path(r'C:\Users\djava\Desktop\Upload to Supervisely for Journal\W\Test\ann')
+src_path = Path("Path\to\source")
+dest_path = Path("Path\to\destination")
 files = [file for file in os.listdir(src_path) if file.endswith(".png")]
 
 def converting(file):

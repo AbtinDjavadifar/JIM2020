@@ -4,11 +4,11 @@ import imageio
 from multiprocessing import Pool
 from pathlib import Path
 
-labels_path = Path("E:/Master-UBC/CVPR2020/Data/Real/Total/Wrinkle_Labels/")
-CC_path = Path("E:/Master-UBC/CVPR2020/Data/Real/Total/Connected_Components/")
-probability_path = Path("E:/Master-UBC/CVPR2020/Data/Real/Total/Probabilities/")
+labels_path = Path("Path\to\labels")
+CC_path = Path("Path\to\ConnectedComponents")
+
+probability_path = Path("Path\to\Probabilities")
 annotations = [f for f in os.listdir(labels_path) if f.endswith(".png")]
-brkn = open("broken.txt","w")
 
 def calculating(name):
     try:
@@ -23,7 +23,8 @@ def calculating(name):
         print("{} converted to probability map".format(name))
 
     except IndexError:
-        brkn.write(name + "\n")
+        with open("broken.txt", "w") as outfile:
+            outfile.write(name + "\n")
         pass
 
 if __name__ == '__main__':

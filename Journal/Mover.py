@@ -3,12 +3,12 @@ import shutil
 from pathlib import Path
 
 
-src_path = Path(r'C:\Users\djava\Desktop\Upload to Supervisely for Journal\AC\Masks')
-dest_path = Path(r'C:\Users\djava\Desktop\Upload to Supervisely for Journal\AC\Train\ann')
+src_path = Path("Path\to\source")
+dest_path = Path("Path\to\destination")
 
-images_test = Path(r'C:\Users\djava\Desktop\Upload to Supervisely for Journal\AC\Train\img')
+images = Path("Path\to\images")
 
-files = [file for file in os.listdir(images_test) if file.endswith(".png")]
+files = [file for file in os.listdir(images) if file.endswith(".png")]
 
 
 for file in files:

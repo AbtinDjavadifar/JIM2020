@@ -2,7 +2,7 @@
   {
     "dst": "$sample",
     "src": [
-      "Wrinkle_Real/*"
+      "AC train/*"
     ],
     "action": "data",
     "settings": {
@@ -10,9 +10,35 @@
     }
   },
   {
-    "dst": "$fv",
+    "dst": [
+      "$totrain",
+      "$toval"
+    ],
     "src": [
       "$sample"
+    ],
+    "action": "if",
+    "settings": {
+      "condition": {
+        "probability": 0.95
+      }
+    }
+  },
+  {
+    "dst": "$val",
+    "src": [
+      "$toval"
+    ],
+    "action": "tag",
+    "settings": {
+      "tag": "val",
+      "action": "add"
+    }
+  },
+  {
+    "dst": "$fv",
+    "src": [
+      "$totrain"
     ],
     "action": "flip",
     "settings": {
@@ -23,7 +49,7 @@
     "dst": "$fh",
     "src": [
       "$fv",
-      "$sample"
+      "$totrain"
     ],
     "action": "flip",
     "settings": {
@@ -34,7 +60,7 @@
     "dst": "$data",
     "src": [
       "$fv",
-      "$sample",
+      "$totrain",
       "$fh"
     ],
     "action": "dummy",
@@ -71,40 +97,14 @@
     }
   },
   {
-    "dst": [
-      "$totrain",
-      "$toval"
-    ],
+    "dst": "$train",
     "src": [
       "$data3",
       "$data"
     ],
-    "action": "if",
-    "settings": {
-      "condition": {
-        "probability": 0.95
-      }
-    }
-  },
-  {
-    "dst": "$train",
-    "src": [
-      "$totrain"
-    ],
     "action": "tag",
     "settings": {
       "tag": "train",
-      "action": "add"
-    }
-  },
-  {
-    "dst": "$val",
-    "src": [
-      "$toval"
-    ],
-    "action": "tag",
-    "settings": {
-      "tag": "val",
       "action": "add"
     }
   },
@@ -120,7 +120,7 @@
     }
   },
   {
-    "dst": "Wrinkle_Real_train",
+    "dst": "AC train aug",
     "src": [
       "$data_with_bg"
     ],

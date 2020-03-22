@@ -4,12 +4,12 @@ import os
 from PIL import Image
 from pathlib import Path
 
-path_dict = {'UNet':Path('E:/Common/UNet_Real_Test/ds/masks_machine'),
-             'Deeplab':Path('E:/Common/DeepLabV3_Real_Test/ds/masks_machine'),
-             'ICnet':Path('E:/Common/ICNet_Real_Test/ds/masks_machine'),
-             'MaskRCNN':Path('E:/Common/MaskRCNN_Real_Test/ds/masks_machine')}
+path_dict = {'UNet':Path("Path\to\Unet"),
+             'Deeplab':Path("Path\to\Deeplab"),
+             'ICnet':Path("Path\to\ICnet"),
+             'MaskRCNN':Path("Path\to\MaskRCNN")}
 
-outputdir = Path('E:/Common/visualization')
+outputdir = Path("Path\to\outputs")
 
 models = ['Unet', 'Deeplab', 'ICnet', 'MaskRCNN']
 ids = ['Cam_1_Pic_19-08-57.png', 'Cam_2_Pic_19-09-14.png', 'Cam_3_Pic_19-09-00.png', 'Cam_4_Pic_19-10-02.png', 'Cam_5_Pic_19-09-55.png']
