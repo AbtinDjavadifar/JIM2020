@@ -1,5 +1,0 @@
-classes_mapping = {
-    "Fabric": "Fabric_dl",
-    "Gripper": "Gripper_dl",
-    "Wrinkle": "Wrinkle_dl",
-}
